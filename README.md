@@ -34,34 +34,20 @@ Start here to set up CytoBulk in your environment:
 Contains detailed tutorials for reproducing CytoBulk results on various datasets. Choose between **Conda** or **Docker** environments:
 
 #### A. Conda Tutorials (`conda_run_case/`)
-Python scripts with accompanying Markdown documentation:
+Markdown documentation for tutorials (each includes instructions to run accompanying Python scripts):
 
-**Bulk RNA-seq deconvolution:**
-- `bulk_deconv_12_simulation.*` — Synthetic bulk data deconvolution
-- `bulk_deconv_brca.*` — BRCA dataset deconvolution
-- `bulk_deconv_Flu_sdy67.*` — Flu study (SDY67) deconvolution
-- `bulk_deconv_human_bulk.*` — Human bulk RNA-seq deconvolution
-- `bulk_deconv_TCGA.*` — TCGA dataset deconvolution
-
-**Bulk RNA → cell type mapping:**
-- `bulk_brca_mapping.py` — BRCA bulk-to-single-cell mapping
-- `bulk_human_bulk_mapping.py` — Human bulk mapping
+**Bulk RNA-seq deconvolution and cell mapping:**
+- `bulk_deconv_*.md` — Bulk deconvolution tutorials (12_simulation, BRCA, Flu_sdy67, human_bulk, TCGA, HGSOC, etc.)
 
 **H&E image → scRNA mapping:**
-- `he_mapping.py` — General H&E mapping script
-- `HE_mapping_CID867.md` — CID867 dataset tutorial with visualization
+- `he_mapping.md` — General H&E mapping tutorial
+- `HE_mapping_*.md` — H&E mapping tutorials for specific datasets (CID867, TCGA-37-4132, etc.)
 
 **Spatial transcriptomics (ST) deconvolution:**
-- `st_deconv_10x_BRCA.*` — 10x visium BRCA dataset
-- `st_deconv_ER2.*` — ER2 dataset
-- `st_deconv_merfish.*` — MERFISH data
-- `st_deconv_mouse_mob.*` — Mouse MOB (main olfactory bulb) data
-- `st_deconv_pdac.*` — PDAC (pancreatic cancer) data
-- `st_deconv_seqfishplus.*` — seqFISH+ data
-- `st_deconv_TNBC.*` — TNBC (triple-negative breast cancer) data
+- `st_deconv_*.md` — ST deconvolution tutorials (10x_BRCA, ER2, merfish, mouse_mob, pdac, seqfishplus, TNBC, etc.)
 
-**ST reconstruction (st_mapping):**
-- `st_10x_mapping.py` — ST cell type mapping (maps single cells to spatial locations)
+**ST reconstruction:**
+- `st_10x_mapping.md` — ST cell type mapping (maps single cells to spatial locations)
 
 #### B. Docker Tutorials (`docker_run_case/`)
 Docker-compatible documentation for running the same analyses:
@@ -70,16 +56,32 @@ Docker-compatible documentation for running the same analyses:
 - `bulk_deconv_*.md` — Docker versions of bulk deconvolution tutorials
 
 **H&E mapping:**
-- `HE_mapping_CID867.md` — Docker tutorial for CID867 dataset
-- `HE_mapping_TCGA-37-4132.md` — Docker tutorial for TCGA-37-4132 dataset
-- `bulk_deconv_HGSOC.md` — High-grade serous ovarian cancer dataset
+- `HE_mapping_*.md` — H&E mapping tutorials for specific datasets (CID867, TCGA-37-4132, etc.)
 
 **ST deconvolution:**
-- `st_deconv_*.md` — Docker versions of ST deconvolution tutorials
+- `st_deconv_*.md` — ST deconvolution tutorials (10x_BRCA, ER2, merfish, mouse_mob, pdac, seqfishplus, TNBC, etc.)
 
 ### 3. Visualization (`visualization/`)
 
 Interactive Jupyter notebooks for exploring and visualizing CytoBulk results:
+
+**Important: Required packages for visualization**
+
+Before running Jupyter notebooks, ensure the following packages are installed in your environment:
+
+```bash
+pip install pandas numpy scanpy matplotlib seaborn scipy scikit-learn
+```
+
+Key packages:
+- `scanpy` — Single-cell analysis toolkit
+- `pandas` — Data manipulation
+- `numpy` — Numerical computing
+- `matplotlib` & `seaborn` — Data visualization
+- `scipy` — Statistical tests (Mann-Whitney U, Pearson correlation, etc.)
+- `scikit-learn` — Machine learning metrics (MSE, mean absolute error, etc.)
+
+**Jupyter notebooks:**
 
 - **`bulk_visualization.ipynb`** — Bulk RNA-seq deconvolution results
   - Visualize deconvolved cell-type fractions
