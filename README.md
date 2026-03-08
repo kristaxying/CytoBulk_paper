@@ -1,6 +1,6 @@
 # CytoBulk: Results Reproduction & Visualization Tutorials
 
-This repository contains comprehensive **installation guides**, **result reproduction tutorials**, and **visualization notebooks** for the CytoBulk bioinformatics tool.
+This repository contains comprehensive **installation guides**, **result reproduction tutorials**, and **visualization notebooks** for the CytoBulk.
 
 ## Overview
 
